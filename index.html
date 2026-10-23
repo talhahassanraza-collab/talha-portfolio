@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Talha Hassan Raza is a multimedia designer and digital specialist based in Karachi, Pakistan, creating brand identities, websites, product visuals and digital content." />
+		<meta name="theme-color" content="#000000" />
+		<title>Talha Hassan Raza | Multimedia Designer &amp; Digital Specialist</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- CSS Style -->
+		<link rel="stylesheet" href="assets/css/normalize.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+	</head>
+	<body>
+		<!-- Start Preloader -->
+		<div id="preloader" class="preloader">
+			<div class="loader"></div>
+		</div>
+		<!-- End Preloader -->
+		<!-- Start Background Video -->
+		<video id="bgVideoPlayer" class="bg-video" muted autoplay loop playsinline aria-hidden="true">
+			<source
+				id="bgVideoSource"
+				src="assets/videos/simple-strings.mp4"
+				type="video/mp4"
+			/>
+		</video>
+		<!-- Start Settings -->
+		<button class="settings-btn btn-secondary" id="settingsOpenBtn">
+			<i class="fa-solid fa-gear fa-fw icon"></i>
+		</button>
+		<div class="settings" id="settingsContainer">
+			<div class="settings__content">
+				<button class="settings__close-btn btn-unset" id="settingsCloseBtn">
+					<i class="fa-solid fa-xmark fa-fw icon"></i>
+				</button>
+				<h2 class="settings__title">Settings</h2>
+				<div class="buttons-configuration">
+					<p class="background-video-configuration">Background Video</p>
+					<div id="buttonsContainer" class="buttons-container"></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Settings -->
+		<!-- End Background Video -->
+		<div class="page container">
+			<!-- Start Navbar -->
+			<nav class="navbar">
+				<ul class="navbar__list">
+					<li class="navbar__item">
+						<a href="#home" class="navbar__link active" aria-label="Home">
+							<i class="fa-solid fa-house fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#about" class="navbar__link" aria-label="About">
+							<i class="fa-solid fa-user fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#resume" class="navbar__link" aria-label="Experience and education">
+							<i class="fa-solid fa-briefcase fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#services" class="navbar__link" aria-label="Services">
+							<i class="fa-solid fa-bars-staggered fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#skills" class="navbar__link" aria-label="Skills">
+							<i class="fa-solid fa-shapes fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#portfolio" class="navbar__link" aria-label="Portfolio">
+							<i class="fa-solid fa-grip-vertical fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#brands" class="navbar__link" aria-label="Projects">
+							<i class="fa-solid fa-star fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#pricing" class="navbar__link" aria-label="Project enquiries">
+							<i class="fa-solid fa-paper-plane fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#contact" class="navbar__link" aria-label="Contact">
+							<i class="fa-solid fa-envelope fa-fw icon navbar__icon"></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- End Navbar -->
+			<!-- Start Sidebar -->
+			<aside class="sidebar">
+				<div class="profile">
+					<div class="profile__header">
+						<a class="profile__logo profile__name" href="#home">Talha Hassan Raza</a>
+						<p class="profile__designation">Multimedia Designer &amp; Digital Specialist</p>
+					</div>
+					<div class="profile__content">
+						<img
+							class="profile__image profile__photo"
+							src="assets/images/profile.jpg"
+							alt="Talha Hassan Raza"
+						/>
+						<a class="profile__info profile__email" href="mailto:talhahassanraza@gmail.com">talhahassanraza@gmail.com</a>
+						<p class="profile__info">Based in Karachi, Pakistan</p>
+						<p class="copyright">&copy; <span id="copyrightYear">2026</span> Talha Hassan Raza</p>
+
+						<div class="social">
+							<ul class="social__list">
+								<li class="social__item">
+									<a class="social__link" href="https://www.behance.net/talhaansari" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+										<i class="fa-brands fa-behance fa-fw social__icon icon"></i>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link" href="https://www.flickr.com/photos/196999043@N04" target="_blank" rel="noopener noreferrer" aria-label="Flickr">
+										<i class="fa-brands fa-flickr fa-fw social__icon icon"></i>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link" href="tel:+923222772386" aria-label="Call Talha">
+										<i class="fa-solid fa-phone fa-fw social__icon icon"></i>
+									</a>
+								</li>
+							</ul>
+
+							<a class="btn-primary btn-block profile__hire" href="mailto:talhahassanraza@gmail.com">
+								<i class="fa-regular fa-envelope fa-fw icon"></i>
+								Hire Me!
+							</a>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<!-- End Sidebar -->
+			<main class="main">
+				<!-- Start Home Section -->
+				<section class="section home" id="home">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-house fa-fw icon"></i>
+							Home
+						</p>
+						<h1 class="section__title section__title--lg">
+							Say Hi, I’m <span>Talha</span> — Multimedia Designer &amp; Digital Specialist
+						</h1>
+						<p class="section__description">
+							I bring ideas to life through design, photography, video, 3D and digital experiences.
+						</p>
+						<a class="goto border circle" href="#portfolio">
+							&DownArrow;
+							<img
+								class="goto__image"
+								src="assets/images/round-text.png"
+								alt=""
+							/>
+						</a>
+						<div class="facts">
+							<div class="fact">
+								<p class="fact__number">10+</p>
+								<p class="fact__description">Years of creative experience</p>
+							</div>
+							<div class="fact">
+								<p class="fact__number">360°</p>
+								<p class="fact__description">
+									Multimedia, digital and visual storytelling
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- End Home Section -->
+				<!-- Start About Section -->
+				<section class="section about" id="about">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-user fa-fw icon"></i>
+							About
+						</p>
+						<h2 class="section__title">
+							Every great design begins with an even <span>better story</span>
+						</h2>
+						<p class="section__description">
+							I’m a creative professional with over 10 years of experience shaping visual identities, websites and digital content. My work brings graphic design, photography, video, 3D and e-commerce together to help brands communicate clearly and stand out.
+						</p>
+					</div>
+				</section>
+				<!-- End About Section -->
+				<!-- Start Resume Section -->
+				<section class="section resume" id="resume">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-briefcase fa-fw icon"></i>
+							Resume
+						</p>
+						<h2 class="section__title">Education & <span>Experience</span></h2>
+						<div class="resume__wrapper timelines">
+							<!-- Added using JS dynamically -->
+						</div>
+					</div>
+				</section>
+				<!-- End Resume Section -->
+				<!-- Start Services Section -->
+				<section class="section services" id="services">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-bars-staggered fa-fw icon"></i>
+							Services
+						</p>
+						<h2 class="section__title">My <span>Specializations</span></h2>
+						<div class="services__wrapper">
+							<!-- Added using JS dynamically -->
+						</div>
+					</div>
+				</section>
+				<!-- End Services Section -->
+				<!-- Start Skills Section -->
+				<section class="section skills" id="skills">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-shapes fa-fw icon"></i>
+							Skills
+						</p>
+						<h2 class="section__title">My <span>Advantages</span></h2>
+						<div class="skills__wrapper">
+							<!-- Added using JS dynamically -->
+						</div>
+					</div>
+				</section>
+				<!-- End Skills Section -->
+				<!-- Start Portfolio Section -->
+				<section class="section portfolio" id="portfolio">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-grip-vertical fa-fw icon"></i>
+							Portfolio
+						</p>
+						<h2 class="section__title">Featured <span>Projects</span></h2>
+						<div class="portfolio__wrapper projects">
+							<!-- Added using JS dynamically -->
+						</div>
+					</div>
+				</section>
+				<!-- End Portfolio Section -->
+				<!-- Start Selected Brands Section -->
+				<section class="section testimonial" id="brands">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-star fa-fw icon"></i>
+							Projects
+						</p>
+						<h2 class="section__title">
+							Crafted <span>Works</span>
+						</h2>
+						<div class="brands">
+							<p class="brands__description">Selected design & media projects crafted for diverse clients</p>
+							<div class="brands__wrapper">
+								<span class="brand">SEGO</span>
+								<span class="brand">Q-Mobile</span>
+								<span class="brand">Ofero EV Bikes</span>
+								<span class="brand">Urban360</span>
+								<span class="brand">Dermiheal</span>
+								<span class="brand">The So Basic</span>
+								<span class="brand">Posch Care</span>
+								<span class="brand">Pakistan Currency Exchange</span>
+								<span class="brand">Muhammadi Exchange</span>
+								<span class="brand">Pizza Wings</span>
+								<span class="brand">Pizza Point</span>
+								<span class="brand">Lovine</span>
+								<span class="brand">Lasorti</span>
+								<span class="brand">The Big Bang</span>
+								<span class="brand">Dixy Chicken Karachi</span>
+								<span class="brand">Studio S</span>
+								<span class="brand">Wellness 360</span>
+								<span class="brand">Seven Kitchens</span>
+								<span class="brand">Fajar Travels Pvt Ltd</span>
+								<span class="brand">Bostan Agriculture</span>
+								<span class="brand">D'light</span>
+								<span class="brand">Faw Pakistan</span>
+								<span class="brand">Wood Craft</span>
+								<span class="brand">Envicrete</span>
+								<span class="brand">Suriya Catering</span>
+								<span class="brand">National Accident Support Line</span>
+								<span class="brand">Schole International Academy</span>
+								<span class="brand">Adam Kath</span>
+								<span class="brand">Ai.khair Hajj &amp; Umrah</span>
+								<span class="brand">Alhaj Hyundai</span>
+								<span class="brand">Wellness 360</span>
+								<span class="brand">Hadsons</span>
+								<span class="brand">Wah Snacks</span>
+								<span class="brand">Karachi Broast</span>
+								<span class="brand">Kala Kola</span>
+								<span class="brand">The Chease Club</span>
+								<span class="brand">Street Kitchen</span>
+								<span class="brand">13th Street Pizza</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- End Selected Brands Section -->
+				<!-- Start Project Enquiry Section -->
+				<section class="section pricing" id="pricing">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-paper-plane fa-fw icon"></i>
+							Project enquiries
+						</p>
+						<h2 class="section__title">Have a project in <span>mind?</span></h2>
+						<p class="section__description">Tell me a little about what you’re looking to create. I’d be glad to discuss the right approach and scope.</p>
+						<div class="pricing__wrapper project-enquiry">
+							<a class="btn-primary project-enquiry__link" href="mailto:talhahassanraza@gmail.com">Let’s talk about your project <i class="fa-solid fa-arrow-up-right-from-square fa-fw icon"></i></a>
+						</div>
+					</div>
+				</section>
+				<!-- End Project Enquiry Section -->
+				<!-- Start Contact Section -->
+				<section class="section contact" id="contact">
+					<div class="wrapper">
+						<p class="section__subtitle">
+							<i class="fa-solid fa-envelope fa-fw icon"></i>
+							Contact
+						</p>
+						<h2 class="section__title">Let's Work <span>Together!</span></h2>
+						<div class="contact__wrapper">
+							<form action="" class="form">
+								<div class="form__group">
+									<label class="form__label" for="fullname">Full name</label>
+									<input
+										class="form__control"
+										type="text"
+										name="fullname"
+										id="fullname"
+										placeholder="Your full name"
+										required
+									/>
+								</div>
+								<div class="form__group">
+									<label class="form__label" for="email">Email</label>
+									<input
+										class="form__control"
+										type="email"
+										name="email"
+										id="email"
+										placeholder="Your email address"
+										required
+									/>
+								</div>
+								<div class="form__group">
+									<label class="form__label" for="phone">Phone</label>
+									<input
+										class="form__control"
+										type="tel"
+										name="phone"
+										id="phone"
+										placeholder="Your phone number"
+									/>
+								</div>
+								<div class="form__group">
+									<label class="form__label" for="subject">Subject</label>
+									<select name="subject" id="subject">
+										<option value="Brand and graphic design">Brand and graphic design</option>
+										<option value="Video and motion">Video and motion</option>
+										<option value="3D and product visuals">3D and product visuals</option>
+										<option value="Website and e-commerce">Website and e-commerce</option>
+										<option value="Photography">Photography</option>
+										<option value="Other project">Other project</option>
+									</select>
+								</div>
+								<div class="form__group form__budget">
+									<label class="form__label" for="budget">Your budget</label>
+									<input
+										class="form__control"
+										type="text"
+										name="budget"
+										id="budget"
+										placeholder="A range budget for your project"
+									/>
+								</div>
+								<div class="form__group form__message">
+									<label class="form__label" for="message">Message</label>
+									<textarea
+										name="message"
+										id="message"
+										placeholder="Write your message here..."
+										required
+									></textarea>
+								</div>
+								<input
+									class="btn-primary form__submit"
+									type="submit"
+									value="Send message"
+								/>
+								<p class="form__status" id="formStatus" aria-live="polite">This form opens your email app to send the message. It does not store or submit data to a website server.</p>
+							</form>
+						</div>
+					</div>
+				</section>
+				<!-- End Contact Section -->
+			</main>
+		</div>
+		<!-- JS -->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/resume.js"></script>
+		<script src="assets/js/services.js"></script>
+		<script src="assets/js/skills.js"></script>
+		<script src="assets/js/projects.js"></script>
+	</body>
+</html>

@@ -1,0 +1,223 @@
+:root {
+	--clr-primary-500: #c9f36c;
+	--clr-primary-600: #a8d94e;
+}
+
+html {
+	color-scheme: dark;
+}
+
+.profile__name {
+	color: var(--clr-neutral-100);
+	font-size: 1.35rem;
+	font-weight: var(--fw-bold);
+	white-space: nowrap;
+}
+
+.profile__designation {
+	max-width: 16ch;
+	font-size: 0.8rem;
+}
+
+.profile__photo {
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	object-position: center 38%;
+}
+
+.profile__email {
+	font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+	overflow-wrap: anywhere;
+}
+
+.profile__hire {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6em;
+}
+
+.fact__number {
+	font-size: clamp(2.5rem, 5vw, var(--fs-h1));
+}
+
+.brands__wrapper .brand {
+	display: grid;
+	min-height: 92px;
+	place-items: center;
+	padding: 1em;
+	border: 1px solid var(--clr-neutral-600);
+	border-radius: 0.75em;
+	color: var(--clr-neutral-100);
+	font-size: 1.05rem;
+	font-weight: var(--fw-bold);
+	text-align: center;
+	transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.brands__wrapper .brand:hover {
+	border-color: var(--clr-primary-500);
+	background-color: var(--clr-primary-500);
+	color: var(--clr-neutral-900);
+	transform: translateY(-3px);
+}
+
+.skill__content {
+	position: relative;
+	min-height: 150px;
+	height: auto;
+	padding: 1.5em;
+}
+
+.skill__index {
+	color: var(--clr-primary-500);
+	font-size: 0.8rem;
+	font-weight: var(--fw-bold);
+}
+
+.skill__tool {
+	margin: 0.75em 0 0;
+	color: var(--clr-neutral-100);
+	font-size: 1.2rem;
+}
+
+.skill__name {
+	margin-top: 0.5em;
+}
+
+.projects {
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+	gap: 2em;
+}
+
+.projects .project__content {
+	height: 250px;
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: clamp(1.25rem, 4vw, 2.5rem);
+	overflow: hidden;
+	border: 1px solid #ffffff26;
+	border-radius: 1em;
+	background:
+		radial-gradient(ellipse at 75% 25%, #ffffff22, transparent 34%),
+		linear-gradient(135deg, #47503c, #19201b 62%, #111310);
+}
+
+.projects .project__content::before {
+	background-image: linear-gradient(135deg, #ffffff08 25%, transparent 25%, transparent 50%, #ffffff08 50%, #ffffff08 75%, transparent 75%);
+	background-size: 28px 28px;
+	opacity: 0.45;
+}
+
+.projects .project__content--1 {
+	background: radial-gradient(ellipse at 65% 40%, #d9a995, transparent 40%), linear-gradient(145deg, #4d302d, #1a1516 78%);
+}
+
+.projects .project__content--2 {
+	background: radial-gradient(ellipse at 70% 25%, #bdc594, transparent 40%), linear-gradient(145deg, #4c5844, #19201a 78%);
+}
+
+.projects .project__content--3 {
+	background: radial-gradient(ellipse at 30% 35%, #c4a97c, transparent 38%), linear-gradient(145deg, #55503d, #1d1b17 78%);
+}
+
+.projects .project__content--4 {
+	background: radial-gradient(ellipse at 75% 34%, #8e9eb3, transparent 40%), linear-gradient(145deg, #303e48, #15191c 78%);
+}
+
+.projects .project__brand,
+.projects .project__category,
+.projects .project__tags {
+	position: relative;
+	z-index: 2;
+}
+
+.projects .project__brand {
+	color: #f5f4e9;
+	font-size: clamp(1.6rem, 4vw, 2.65rem);
+	font-weight: var(--fw-bold);
+	letter-spacing: -0.05em;
+}
+
+.projects .project__category {
+	margin-top: 0.55em;
+	color: #e1e2d7;
+	font-size: 0.9rem;
+}
+
+.projects .project__tags {
+	position: relative;
+	inset: auto;
+	margin: 1.25em 0 0;
+	padding: 0;
+}
+
+.projects .project__tag {
+	font-size: 0.75rem;
+}
+
+.projects .project__title {
+	margin-top: 0.75em;
+	font-size: 1.1rem;
+}
+
+.project-enquiry {
+	margin-top: 2em;
+}
+
+.project-enquiry__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 1em;
+	padding: 0.8em 1.2em;
+	border-radius: 100vmax;
+	color: var(--clr-neutral-900);
+}
+
+.form__status {
+	grid-column: 1 / -1;
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+.contact .form {
+	gap: 2em;
+}
+
+@media (max-width: 767px) {
+	.navbar {
+		position: fixed;
+		top: auto;
+		right: 50%;
+		bottom: 12px;
+		display: grid;
+		width: max-content;
+		max-width: calc(100vw - 16px);
+		transform: translateX(50%);
+	}
+
+	.navbar__list {
+		max-width: calc(100vw - 16px);
+		padding: 0 0.1em;
+		background-color: #111;
+	}
+
+	.navbar__link {
+		width: 1.35em;
+		height: 1.35em;
+		margin: 0.2em;
+		font-size: 0.9rem;
+	}
+
+	.profile__name {
+		font-size: 1.1rem;
+	}
+
+	.projects .project__content {
+		height: 210px;
+		min-height: 210px;
+	}
+}
