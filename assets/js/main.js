@@ -1,86 +1,3 @@
-const preloader = document.getElementById("preloader");
-const settingsOpenBtn = document.getElementById("settingsOpenBtn");
-const settingsCloseBtn = document.getElementById("settingsCloseBtn");
-const settingsContainer = document.getElementById("settingsContainer");
-
-window.addEventListener("load", () => {
-	window.setTimeout(() => preloader?.classList.add("hidden"), 300);
-});
-
-settingsOpenBtn?.addEventListener("click", () => {
-	settingsContainer?.classList.add("active");
-});
-
-settingsCloseBtn?.addEventListener("click", () => {
-	settingsContainer?.classList.remove("active");
-});
-
-document.addEventListener("keyup", (event) => {
-	if (event.key === "Escape") settingsContainer?.classList.remove("active");
-});
-
-settingsContainer?.addEventListener("click", (event) => {
-	if (event.target === settingsContainer) settingsContainer.classList.remove("active");
-});
-
-const bgVideoPlayer = document.getElementById("bgVideoPlayer");
-const bgVideoSource = document.getElementById("bgVideoSource");
-const buttonsContainer = document.getElementById("buttonsContainer");
-const videoOptions = [
-	["Simple strings", "simple-strings.mp4"],
-	["Water waves", "water-waves.mp4"],
-	["Liquids wavy", "liquids-wavy.mp4"],
-	["3D abstract ball", "3d-abstract-ball.mp4"],
-	["Earth lines sphere", "earth-lines-sphere.mp4"],
-];
-
-function selectBackgroundVideo(source, selectedButton) {
-	if (!bgVideoPlayer || !bgVideoSource) return;
-
-	bgVideoSource.src = source;
-	bgVideoPlayer.load();
-	bgVideoPlayer.play().catch((error) => {
-		console.warn("Background video playback was blocked.", error);
-	});
-
-	buttonsContainer?.querySelectorAll("button").forEach((button) => {
-		button.setAttribute("aria-pressed", String(button === selectedButton));
-	});
-	settingsContainer?.classList.remove("active");
-
-	try {
-		localStorage.setItem("bgVideoSource", source);
-	} catch (error) {
-		console.warn("Could not save the selected background video.", error);
-	}
-}
-
-if (buttonsContainer && bgVideoPlayer && bgVideoSource) {
-	for (const [label, filename] of videoOptions) {
-		const button = document.createElement("button");
-		const source = `assets/videos/${filename}`;
-		button.type = "button";
-		button.textContent = label;
-		button.addEventListener("click", () => selectBackgroundVideo(source, button));
-		buttonsContainer.appendChild(button);
-	}
-
-	try {
-		const savedSource = localStorage.getItem("bgVideoSource");
-		const savedVideo = videoOptions.find(([, filename]) => savedSource === `assets/videos/${filename}`);
-		if (savedSource && savedVideo) {
-			bgVideoSource.src = savedSource;
-			bgVideoPlayer.load();
-			const selectedButton = [...buttonsContainer.querySelectorAll("button")].find(
-				(button) => button.textContent === savedVideo[0],
-			);
-			selectedButton?.setAttribute("aria-pressed", "true");
-		}
-	} catch (error) {
-		console.warn("Could not restore the selected background video.", error);
-	}
-}
-
 const mainContainer = document.querySelector("main.main");
 const sections = [...document.querySelectorAll("section[id]")];
 const navbarLinks = [...document.querySelectorAll(".navbar__link")];
@@ -93,7 +10,12 @@ function updateActiveNavigation() {
 	});
 
 	navbarLinks.forEach((link) => {
-		link.classList.toggle("active", link.getAttribute("href") === `#${currentSection?.id}`);
+		const group = { portfolio: "ai-creative", services: "about", resume: "about" };
+        const currentId = group[currentSection?.id] || currentSection?.id;
+        const active = link.getAttribute("href") === `#${currentId}`;
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
 	});
 }
 
@@ -119,8 +41,6 @@ contactForm?.addEventListener("submit", (event) => {
 	const message = [
 		`Name: ${senderName}`,
 		`Email: ${senderEmail}`,
-		`Phone: ${String(formData.get("phone") || "").trim() || "Not provided"}`,
-		`Budget: ${String(formData.get("budget") || "").trim() || "Not provided"}`,
 		"",
 		String(formData.get("message") || "").trim(),
 	].join("\n");
@@ -129,3 +49,21 @@ contactForm?.addEventListener("submit", (event) => {
 	if (status) status.textContent = "Opening your email app with the enquiry. Send it from there to reach Talha.";
 	window.location.href = mailto;
 });
+
+const workFilters = [...document.querySelectorAll("[data-work-filter]")];
+const workGroups = [...document.querySelectorAll("[data-work-group]")];
+function filterWork(value) {
+    workFilters.forEach((button) => {
+        const selected = button.dataset.workFilter === value;
+        button.classList.toggle("is-selected", selected);
+        button.setAttribute("aria-pressed", String(selected));
+    });
+    workGroups.forEach((group) => { group.hidden = value !== "all" && group.dataset.workGroup !== value; });
+    const status = document.querySelector(".work-filter-status");
+    if (status) status.textContent = value === "all" ? "Showing all portfolio work." : `Showing ${workFilters.find(button => button.dataset.workFilter === value)?.textContent}.`;
+    updateActiveNavigation();
+}
+workFilters.forEach(button => button.addEventListener("click", () => filterWork(button.dataset.workFilter)));
+document.querySelectorAll("[data-show-all-work], .navbar__link[href='#ai-creative']").forEach(link => link.addEventListener("click", () => filterWork("all")));
+// Keep direct links to the website section usable after filtering.
+window.addEventListener("hashchange", () => { if (location.hash === "#portfolio") filterWork("all"); });
